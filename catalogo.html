@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Canto da Mistura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo Canto da Mistura</h1>
+        <p>Atualizado em: 03/04/2024</p>
+    </header>
+
+    <main>
+        <div id="catalogo"></div>
+		<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		  var xhttp = new XMLHttpRequest();
+		  xhttp.onreadystatechange = function() {
+			if (this.readyState === 4 && this.status === 200) {
+			  carregarCatalogo(this);
+			}
+		  };
+		  xhttp.open("GET", "catalogo.xml", true);
+		  xhttp.send();
+		});
+
+		function carregarCatalogo(xml) {
+		  var i;
+		  var xmlDoc = xml.responseXML;
+		  var html = "";
+		  var categorias = xmlDoc.getElementsByTagName("categoria");
+		  for (i = 0; i < categorias.length; i++) {
+			html += "<h2>" + categorias[i].getAttribute('nome') + "</h2>";
+			var itens = categorias[i].getElementsByTagName("item");
+			for (var j = 0; j < itens.length; j++) {
+			  html += "<li>" + itens[j].childNodes[0].nodeValue + "</li>";
+			}
+			html += "<br>";
+		  }
+		  document.getElementById("catalogo").innerHTML = html;
+		}
+		</script>
+    </main>
+
+    <footer>
+        <p>© 2024 Canto da Mistura. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
