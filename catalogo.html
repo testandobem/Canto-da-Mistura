@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Catálogo Canto da Mistura</h1>
-        <p>Atualizado em: 03/04/2024</p>
+        <p id="data-atualizacao">Atualizado em: ?</p>
     </header>
 
     <main>
@@ -43,6 +43,16 @@
 		  }
 		  document.getElementById("catalogo").innerHTML = html;
 		}
+		
+		// Atualizar o catálogo com os itens do XML
+		document.getElementById("catalogo").innerHTML = html;
+		
+		// Atualizar a data de atualização
+		var dataAtualizacao = new Date(xmlDoc.getElementsByTagName("data-atualizacao")[0].childNodes[0].nodeValue);
+		var dia = dataAtualizacao.getDate();
+		var mes = dataAtualizacao.getMonth() + 1;
+		var ano = dataAtualizacao.getFullYear();
+		document.getElementById("data-atualizacao").innerHTML = "Atualizado em: " + (dia < 10 ? '0' : '') + dia + "/" + (mes < 10 ? '0' : '') + mes + "/" + ano;
 		</script>
     </main>
 
