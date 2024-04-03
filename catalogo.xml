@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalogo>
   <categoria nome="Carnes e Aves">
-    <item>Acém: R$29,99 kg 🐂</item>
-    <item>Alcatra: R$34,99 kg🐂</item>
-    <item>Alcatra🐂Peça: R$31,99 kg</item>
-    <!-- Adicione mais itens aqui -->
+    <item>
+      <nome>Acém</nome>
+      <preco>R$29,99 kg 🐂</preco>
+    </item>
+    <item>
+      <nome>Alcatra</nome>
+      <preco>R$34,99 kg 🐂</preco>
+    </item>
+    <!-- Continue com a estruturação dos itens -->
   </categoria>
   <categoria nome="Lanches, Laticínios e Bebidas">
-    <item>Água de Coco: R$3,49 unid.</item>
-    <item>Água mineral 510ml: R$2,49 unid.</item>
-    <item>Água Tônica: R$4,99 unid.</item>
-    <!-- Adicione mais itens aqui -->
+    <item>
+      <nome>Água de Coco</nome>
+      <preco>R$3,49 unid.</preco>
+    </item>
+    <!-- Continue com a estruturação dos itens -->
   </categoria>
+  <!-- Adicione mais categorias e itens conforme necessário -->
 </catalogo>
