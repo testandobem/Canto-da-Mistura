@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalogo>
+  <data-atualizacao>03/04/2024</data-atualizacao>
   <categoria nome="Carnes e Aves">
     <item>
       <nome>Acém</nome>
@@ -11,6 +12,7 @@
     </item>
     <!-- Continue com a estruturação dos itens -->
   </categoria>
+  
   <categoria nome="Lanches, Laticínios e Bebidas">
     <item>
       <nome>Água de Coco</nome>
