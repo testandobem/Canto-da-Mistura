@@ -18,7 +18,7 @@
 		document.addEventListener("DOMContentLoaded", function() {
 		  var xhttp = new XMLHttpRequest();
 		  xhttp.onreadystatechange = function() {
-			if (this.readyState === 4 && this.status === 200) {
+			if (this.readyState == 4 && this.status == 200) {
 			  carregarCatalogo(this);
 			}
 		  };
@@ -32,12 +32,14 @@
 		  var html = "";
 		  var categorias = xmlDoc.getElementsByTagName("categoria");
 		  for (i = 0; i < categorias.length; i++) {
-			html += "<h2>" + categorias[i].getAttribute('nome') + "</h2>";
+			html += "<h2>" + categorias[i].getAttribute('nome') + "</h2><ul>";
 			var itens = categorias[i].getElementsByTagName("item");
 			for (var j = 0; j < itens.length; j++) {
-			  html += "<li>" + itens[j].childNodes[0].nodeValue + "</li>";
+			  var nome = itens[j].getElementsByTagName("nome")[0].childNodes[0].nodeValue;
+			  var preco = itens[j].getElementsByTagName("preco")[0].childNodes[0].nodeValue;
+			  html += "<li>" + nome + ": " + preco + "</li>";
 			}
-			html += "<br>";
+			html += "</ul>";
 		  }
 		  document.getElementById("catalogo").innerHTML = html;
 		}
@@ -49,4 +51,3 @@
     </footer>
 </body>
 </html>
-
